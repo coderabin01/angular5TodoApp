@@ -1,0 +1,20 @@
+<div class="form-group">
+  <label for="name">Name</label>
+  <input #newHero class="form-control" id="name"
+         required
+         [(ngModel)]="name" (keyup.enter)="addPerson(name)"
+         (blur) = "addPerson(name)">
+</div>
+{{newHero.name}}
+
+<!--<div class="form-group">-->
+  <!--<label for="alterEgo">Alter Ego</label>-->
+  <!--<input type="text"  class="form-control" id="alterEgo"-->
+         <!--[(ngModel)]="alterEgo" name="alterEgo">-->
+<!--</div>-->
+
+<ul>
+  <li *ngFor = "let person of people">{{person.name}}</li>
+</ul>
+
+<button (click)="addPerson(newHero.name)">Send</button>
