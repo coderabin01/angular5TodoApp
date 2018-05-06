@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AlbumsService} from "./albums.service";
+import {AlbumsService} from './albums.service';
 
 @Component({
   selector: 'app-albums',
@@ -8,15 +8,20 @@ import {AlbumsService} from "./albums.service";
 })
 export class AlbumsComponent implements OnInit {
   albums = [];
-  constructor(private albumsService: AlbumsService) {};
+  albums2 = [];
+  constructor(private albumsService: AlbumsService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     // this.albums = ['album1', 'album2', 'album3', 'album4'];
     this.getAlbums();
+    this.getAlbums2();
   }
 
-  getAlbums(): void{
-    this.albumsService.album()
-      .subscribe(albums => this.albums = albums);
+  getAlbums(): void {
+    this.albums = this.albumsService.getAlbums();
+  }
+  getAlbums2(): void {
+    this.albumsService.album
+      .subscribe(albums => this.albums2 = albums);
   }
 }

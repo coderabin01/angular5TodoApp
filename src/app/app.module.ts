@@ -11,16 +11,12 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlbumsComponent } from './albums/albums.component';
-import {AlbumsService} from "./albums/albums.service";
+import {AlbumsService} from './albums/albums.service';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'footer',      component: FooterComponent },
-  {
-    path: 'albums',
-    component: AlbumsComponent,
-    data: { title: 'Heroes List' }
-  },
+  { path: 'albums', component: AlbumsComponent, data: { title: 'Heroes List' }},
   { path: '',
     redirectTo: '/dashboard',
     pathMatch: 'full'
@@ -37,11 +33,8 @@ const appRoutes: Routes = [
     AlbumsComponent
   ],
   imports: [
-    // MatButtonModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     FormsModule,
-    // MaterialModule,
-    // MatCardModule,
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
